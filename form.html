@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আবেদন ফরম - কোম্পানির নাম</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>কোম্পানির নাম</h1>
+        </header>
+        <main>
+            <h2>আবেদন ফরম</h2>
+            <!-- Progress Bar -->
+            <div class="progressbar">
+                <div class="progress" id="progress"></div>
+                <div class="progress-step progress-step-active" data-title="ব্যক্তিগত"></div>
+                <div class="progress-step" data-title="ঠিকানা"></div>
+                <div class="progress-step" data-title="ডকুমেন্ট"></div>
+            </div>
+
+            <form id="applicationForm">
+                <!-- Step 1: Personal Details -->
+                <div class="form-step form-step-active">
+                    <fieldset>
+                        <legend>ব্যক্তিগত বিবরণ</legend>
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> নাম:</label>
+                            <input type="text" id="name" name="name" placeholder="আপনার সম্পূর্ণ নাম লিখুন" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> ফোন নাম্বার:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="আপনার ফোন নাম্বার লিখুন" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class="fas fa-envelope"></i> ইমেইল:</label>
+                            <input type="email" id="email" name="email" placeholder="আপনার ইমেইল ঠিকানা লিখুন" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment_account"><i class="fas fa-wallet"></i> বিকাশ / নগদ একাউন্ট:</label>
+                            <input type="text" id="payment_account" name="payment_account" placeholder="একাউন্ট নাম্বার দিন" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="nid"><i class="fas fa-id-card"></i> NID নাম্বার:</label>
+                            <input type="text" id="nid" name="nid" placeholder="আপনার NID নাম্বার লিখুন" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob"><i class="fas fa-calendar-alt"></i> জন্ম তারিখ:</label>
+                            <input type="date" id="dob" name="dob" required>
+                            <small class="error-message"></small>
+                        </div>
+                         <div class="btns-group">
+                            <a href="#" class="btn btn-next">পরবর্তী</a>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Step 2: Guardian & Address -->
+                <div class="form-step">
+                     <fieldset>
+                        <legend>অভিভাবকের বিবরণ ও ঠিকানা</legend>
+                        <div class="form-group">
+                            <label for="father_name"><i class="fas fa-user-shield"></i> বাবার নাম:</label>
+                            <input type="text" id="father_name" name="father_name" placeholder="আপনার বাবার নাম লিখুন" required>
+                             <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="guardian_phone"><i class="fas fa-mobile-alt"></i> অভিভাবকের ফোন:</label>
+                            <input type="tel" id="guardian_phone" name="guardian_phone" placeholder="অভিভাবকের ফোন নাম্বার" required>
+                             <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="present_address"><i class="fas fa-map-marker-alt"></i> বর্তমান ঠিকানা:</label>
+                            <textarea id="present_address" name="present_address" rows="3" placeholder="আপনার বর্তমান ঠিকানা লিখুন" required></textarea>
+                             <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="permanent_address"><i class="fas fa-map-marked-alt"></i> স্থায়ী ঠিকানা:</label>
+                            <textarea id="permanent_address" name="permanent_address" rows="3" placeholder="আপনার স্থায়ী ঠিকানা লিখুন" required></textarea>
+                             <small class="error-message"></small>
+                        </div>
+                        <div class="btns-group">
+                            <a href="#" class="btn btn-prev">পূর্ববর্তী</a>
+                            <a href="#" class="btn btn-next">পরবর্তী</a>
+                        </div>
+                    </fieldset>
+                </div>
+               
+                <!-- Step 3: Documents -->
+                <div class="form-step">
+                    <fieldset>
+                        <legend>ডকুমেন্ট আপলোড</legend>
+                        <div class="form-group file-upload-wrapper">
+                            <label for="photo"><i class="fas fa-camera"></i> আপনার ছবি:</label>
+                            <input type="file" id="photo" name="photo" accept="image/*" required>
+                            <div class="file-upload-display">
+                                <span class="file-upload-text">একটি ছবি নির্বাচন করুন...</span>
+                            </div>
+                             <img class="image-preview" src="#" alt="Image Preview"/>
+                             <small class="error-message"></small>
+                        </div>
+                        <div class="form-group file-upload-wrapper">
+                            <label for="payment_screenshot"><i class="fas fa-receipt"></i> পেমেন্ট স্ক্রিনশট:</label>
+                            <input type="file" id="payment_screenshot" name="payment_screenshot" accept="image/*" required>
+                            <div class="file-upload-display">
+                                <span class="file-upload-text">একটি স্ক্রিনশট নির্বাচন করুন...</span>
+                            </div>
+                            <img class="image-preview" src="#" alt="Image Preview"/>
+                             <small class="error-message"></small>
+                        </div>
+                        <div class="btns-group">
+                             <a href="#" class="btn btn-prev">পূর্ববর্তী</a>
+                            <button type="submit" class="btn" id="submitBtn">
+                                <span class="btn-text">সাবমিট করুন</span>
+                                <span class="spinner"></span>
+                            </button>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
